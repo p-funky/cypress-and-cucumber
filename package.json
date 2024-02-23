@@ -1,0 +1,29 @@
+{
+  "name": "cypress-and-cucumber",
+  "version": "1.0.0",
+  "description": "Cypress with Cucumber",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open",
+    "test:headless": "cypress run",
+    "test:web:main:headless": "cypress run --spec 'cypress/e2e/web-automation/checkout.feature'",
+    "test:api:main:headless": "cypress run --spec 'cypress/e2e/api-automation/get-users-posts.feature'",
+    "test:web:headless": "cypress run --spec 'cypress/e2e/web-automation/*.feature'",
+    "test:api:headless": "cypress run --spec 'cypress/e2e/api-automation/*.feature'"
+  },
+  "keywords": [
+    "Cypress",
+    "Cucumber",
+    "BDD"
+  ],
+  "author": "Adeyinka Alabi (P-Funky)",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.6.4",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "cypress/e2e"
+  }
+}
